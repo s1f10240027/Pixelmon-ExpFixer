@@ -1,2 +1,42 @@
-# Pixelmon-ExpFixer
-A server-side NeoForge mod for Pixelmon (MC 1.21.1) that detects and compensates for lost exp during battles.
+# PixelmonExpFixer
+
+Pixelmonでの戦闘終了時に、獲得した経験値が消失してしまうバグを検知して補填するサーバーサイドModです。
+
+## Features
+
+* **経験値消失バグの検知・補填**
+    * 戦闘開始時と終了時の経験値を比較し、戦闘中に獲得した経験値が正しく反映されていない場合に不足分を補填します。
+  
+## Requirements
+
+* Minecraft 1.21.1
+* NeoForge 21.1.x
+* Pixelmon 9.3.16
+
+Pixelmon固有のクラスやイベントを使用しているため、他のPixelmonバージョンでの動作は保証されません。
+
+> **Server-side Mod.**
+>
+> マルチサーバーで利用する場合は、サーバー側の `mods` フォルダに導入するだけで機能します。
+> クライアント側（接続するプレイヤー）への導入は必要ありません。
+>
+> シングルプレイで利用する場合は、クライアント側の `mods` フォルダに導入してください。
+> 
+## For Developers
+
+ソースコードから `.jar` ファイルをビルドする場合：
+
+1. リポジトリをクローンまたはダウンロードします。
+2. Pixelmon 9.3.16の `.jar` ファイルを取得し、プロジェクトのルートにある `libs/` フォルダ内に配置します。
+3. ターミナルで以下のコマンドを実行します。
+
+```bash
+./gradlew build
+```
+
+ビルドされた `.jar` ファイルは `build/libs/` 内に出力されます。
+
+## License
+
+このプロジェクトはMIT Licenseのもとで公開されています。  
+詳細は [LICENSE](LICENSE) を確認してください。
